@@ -1,0 +1,119 @@
+.header {
+  $root: &;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 4px;
+  background-color: #111;
+  z-index: 999;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+    background-color: $c-red;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 0;
+  }
+
+  &__logo {
+    font-size: 2.4rem;
+    font-family: $f-bold;
+    letter-spacing: 0.1rem;
+    color: $c-white;
+
+    &:hover {
+      #{$root}__logoText {
+        color: $c-red;
+      }
+    }
+  }
+
+  &__logoText {
+    transition: color $tr;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.6rem;
+    padding: 6.4rem 1.6rem 0;
+    transform: translateX(-100%);
+    transition: transform $tr;
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      background-color: transparent;
+      width: auto;
+      height: auto;
+      top: auto;
+      left: auto;
+      gap: 2.4rem;
+      padding: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    font-family: $f-bold;
+    color: $c-white;
+    transition: color $tr;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $c-red;
+    }
+  }
+
+  &__hamburger {
+    font-size: 2rem;
+    color: $c-white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    color: $c-white;
+    display: grid;
+    place-items: center;
+    padding: 1.6rem;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+}

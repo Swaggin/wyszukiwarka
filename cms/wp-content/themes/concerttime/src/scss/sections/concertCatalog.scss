@@ -1,0 +1,44 @@
+.concertCatalog {
+  $root: &;
+  position: relative;
+
+  &--marginTop {
+    margin-top: 6rem;
+  }
+
+  &--marginBottom {
+    margin-bottom: 6rem;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    font-family: $f-bold;
+    line-height: math.div(48, 36);
+  }
+
+  &__list {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+
+  &__item {
+    width: 100%;
+
+    @media (min-width: 678px) {
+      max-width: calc(50% - 1.6rem);
+    }
+
+    @media (min-width: 1024px) {
+      max-width: calc(25% - 1.6rem);
+    }
+  }
+
+  &__all {
+    width: 100%;
+    margin-top: 3.6rem;
+    display: flex;
+    justify-content: center;
+  }
+}

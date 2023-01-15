@@ -1,0 +1,59 @@
+.concertCatalogItem {
+  $root: &;
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px 3px rgba($c-black, 30%);
+  transition: transform $tr;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+
+    #{$root}__thumbnail {
+      transform: scale(1.1);
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    overflow: hidden;
+    transition: transform $tr;
+    z-index: -1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($c-black, 50%);
+      border-radius: 3rem;
+      z-index: 0;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2.4rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-family: $f-bold;
+    color: $c-white;
+    line-height: math.div(24, 16);
+  }
+}

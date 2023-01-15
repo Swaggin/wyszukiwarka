@@ -1,0 +1,93 @@
+.searchList {
+  $root: &;
+  position: relative;
+  padding: 5rem 0 6rem ;
+
+  &__error {
+    font-size: 3.6rem;
+    font-family: $f-bold;
+    line-height: math.div(48, 36);
+    margin-top: 3.6rem;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    font-family: $f-bold;
+    line-height: math.div(44, 36);
+  }
+
+  &__outer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding: 3.6rem 0;
+    border-bottom: 1px solid $c-black;
+    font-size: 1.6rem;
+    transition: border-bottom $tr, transform $tr;
+
+    &:hover {
+      border-bottom: 1px solid $c-red;
+      transform: translateX(1rem);
+
+      #{$root}__label {
+        color: $c-red;
+      }
+    }
+  }
+
+  &__label {
+    margin-top: 1.6rem;
+    font-family: $f-bold;
+    font-size: 2.4rem;
+    transition: color $tr;
+  }
+
+  &__text {
+    margin-top: 1.6rem;
+    font-size: 1.6rem;
+    line-height: math.div(24, 16);
+  }
+
+  &__form {
+    margin-top: 2.4rem;
+  }
+
+  &__searchbar {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1.6rem;
+    border-radius: 3rem;
+    border: 1px solid $c-black;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 3rem;
+    padding: 1.6rem;
+    border: 1px solid $c-black;
+    background-color: $c-red;
+    color: $c-white;
+    font-family: $f-bold;
+    font-size: 1.4rem;
+    transition: background-color $tr;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($c-red, 10%);
+    }
+  }
+
+  &__count {
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+    line-height: math.div(24, 16);
+  }
+}

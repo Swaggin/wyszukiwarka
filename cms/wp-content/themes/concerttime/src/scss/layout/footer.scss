@@ -1,0 +1,104 @@
+.footer {
+  $root: &;
+  position: relative;
+  background-color: #111;
+
+  &__wrapper {
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 0;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      text-align: left;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 2.4rem;
+    font-family: $f-bold;
+    letter-spacing: 0.1rem;
+    color: $c-white;
+
+    &:hover {
+      #{$root}__logoText {
+        color: $c-red;
+      }
+    }
+  }
+
+  &__logoText {
+    transition: color $tr;
+  }
+
+  &__copyright {
+    font-size: 1.6rem;
+    line-height: math.div(24, 16);
+    color: $c-white;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    margin-top: 2.4rem;
+  }
+
+  &__gap {
+    margin: 2.4rem 0;
+    border-color: $c-red;
+  }
+
+  &__col {
+
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-family: $f-bold;
+    line-height: math.div(28, 18);
+    color: $c-white;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 2.4rem 0;
+
+    @media (min-width: 1024px) {
+      margin-top: 1.2rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.6rem;
+    line-height: math.div(24, 16);
+    color: rgba($c-white, 50%);
+    transition: color $tr;
+    width: 100%;
+    padding-left: 0.5rem;
+
+    @media (min-width: 1024px) {
+      width: fit-content;
+    }
+
+    &:hover {
+      color: $c-red;
+    }
+  }
+}

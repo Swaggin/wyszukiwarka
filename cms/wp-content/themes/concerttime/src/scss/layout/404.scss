@@ -1,0 +1,11 @@
+.e404 {
+  $root: &;
+  position: relative;
+  flex-grow: 1;
+
+  &__text {
+    font-size: 4.8rem;
+    font-family: $f-bold;
+    line-height: math.div(56, 48);
+  }
+}

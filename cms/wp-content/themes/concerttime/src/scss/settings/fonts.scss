@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Work-Sans-Regular';
+  src: url("../../public/fonts/WorkSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Work-Sans-Bold';
+  src: url("../../public/fonts/WorkSans-Bold.ttf") format("truetype");
+}
+
+$f-main: 'Work-Sans-Regular';
+$f-bold: 'Work-Sans-Bold';
